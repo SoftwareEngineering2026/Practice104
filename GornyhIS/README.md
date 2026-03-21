@@ -7,46 +7,54 @@
 Далее все в sh скрипте all.sh (собран из history)
 
 ## all.sh описание
-#!/bin/bash  //указанаие на shell
-cd ~/    //переход в домашний каталог
-touch ~/GornyhIS.txt //Создан файл ФИО
-ls -l /bin/bash //Расширенная информация о файле /bin/bash
-ls -l /bin/bash > infobash.txt //Расширенная информация о файле /bin/bash в infobash.txt
-date "+%A" //вывод дня
-date "+%A" > day.txt //вывод дня в day.txt
-wget http://www.lib.ru/CARROLL/alice.txt //качаем alice.txt
-mv ~/alice.txt ~/alice_mod.txt //меняем имя alice.txt на alice_mod.txt
-wc ~/alice_mod.txt //кол-во символов в alice_mod.txt
-wc ~/alice_mod.txt >> ~/alice_mod.txt  //кол-во символов в alice_mod.txt добавим в конец alice_mod.txt
-head -n 19 ~/alice_mod.txt //вывод 20 строк сначала alice_mod.txt
-tail -n 19 ~/alice_mod.txt //вывод 20 строк конца alice_mod.txt
-mkdir test{1..40} //создаем 40 каталогов test1..40
-rmdir *[37]   //удаляем каталоги с окончанием на 7 и 3
-ls -l ~/  //проверям что их нет
-ls -l ~/ > ~/test.txt  //список в файл test.txt
-wc -l ~/test.txt   //количество
-wc -l ~/test.txt >> test.txt  //количество добавляем в файл test.txt
+##!/bin/bash
 
-//тут В каталогах, номера которых кратны 5, создать текстовый файл date.txt с текущей датой в формате: ГОД-МЕСЯЦ-ДЕНЬ.
-for d in */; do
+# 1. Работа с файлами и информацией о системе
+cd ~/                                   # Переход в домашний каталог
+touch ~/GornyhIS.txt                    # Создание файла с ФИО
+ls -l /bin/bash                         # Вывод расширенной информации о /bin/bash
+ls -l /bin/bash > infobash.txt          # Запись информации о /bin/bash в файл
+date "+%A"                              # Вывод текущего дня недели
+date "+%A" > day.txt                    # Запись дня недели в файл
+
+# 2. Работа с внешними ресурсами и текстом
+wget http://www.lib.ru/CARROLL/alice.txt # Скачивание файла alice.txt
+mv ~/alice.txt ~/alice_mod.txt          # Переименование файла
+wc ~/alice_mod.txt                      # Вывод количества строк, слов и байт
+wc ~/alice_mod.txt >> ~/alice_mod.txt   # Добавление статистики в конец файла
+head -n 19 ~/alice_mod.txt              # Вывод первых 19 строк
+tail -n 19 ~/alice_mod.txt              # Вывод последних 19 строк
+
+# 3. Массовое создание и удаление директорий
+mkdir test{1..40}                       # Создание 40 каталогов (test1...test40)
+rmdir *[37]                             # Удаление каталогов, заканчивающихся на 3 или 7
+ls -l ~/                                # Проверка оставшихся файлов
+ls -l ~/ > ~/test.txt                   # Запись списка файлов в test.txt
+wc -l ~/test.txt                        # Подсчет количества строк в списке
+wc -l ~/test.txt >> test.txt            # Добавление количества строк в файл
+
+# 4. Обработка каталогов кратных 5 (создание date.txt с датой)
+for d in test*/; do
     name=$(basename "$d")
     num=$(echo "$name" | tr -dc '0-9')
     if [ ! -z "$num" ] && [ $((num % 5)) -eq 0 ]; then
         date +%F > "$d/date.txt"
-        echo "$name"
+        echo "Создан файл даты в: $name"
     fi
 done
 
-// тут В каталогах, номера которых кратны 10, дописать в текстовый файл date.txt текущее время.
-for d in */; do
+# 5. Обработка каталогов кратных 10 (добавление времени в date.txt)
+for d in test*/; do
     name=$(basename "$d")
     num=$(echo "$name" | tr -dc '0-9')
     if [ ! -z "$num" ] && [ $((num % 10)) -eq 0 ]; then
         date +"%H:%M:%S" >> "$d/date.txt"
-        echo "time+$name/date.txt"
+        echo "Добавлено время в: $name/date.txt"
     fi
 done
 
 
-##собранный образ push на dockerhub
+
+## собранный образ push на dockerhub
+
 https://hub.docker.com/repository/docker/gornyhivan/gornyhis/general
