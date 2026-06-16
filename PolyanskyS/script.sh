@@ -1,54 +1,54 @@
-#!/bin/bash 
- 
-# Переходим в домашний каталог 
-cd ~ 
- 
-# Создаём файл с фамилией и инициалами 
-touch PolyanskyS.txt 
- 
-# Выводим день недели 
-date +%%A 
- 
-# Информация о /bin/bash 
-ls -la /bin/bash 
-echo "/bin/bash - это командный интерпретатор" 
- 
-# Скачиваем книгу 
-curl -o alice.txt http://www.lib.ru/CARROLL/alice.txt 
- 
-# Количество слов 
-echo "Количество слов: $(wc -w ^< alice.txt)" 
- 
-# Первые 19 строк 
-head -19 alice.txt > first19.txt 
- 
-# Последние 17 строк 
-tail -17 alice.txt > last17.txt 
- 
-# Создаём каталоги 
-mkdir test{1..40} 
- 
-# Удаляем каталоги на 3 и 7 
-rm -rf test*3 test*7 
- 
-# Список каталогов в test.txt 
-ls -d test*/ > test.txt 
- 
-# Количество строк в test.txt 
-echo "Количество каталогов: $(wc -l ^< test.txt)" 
- 
-# В каталогах, кратных 5, создаём date.txt с датой 
-for i in 5 10 15 20 25 30 35 40; do 
-    if [ -d test$i ]; then 
-        date +%%Y-%%m-%%d > test$i/date.txt 
-    fi 
-done 
- 
-# В каталогах, кратных 10, дописываем время 
-for i in 10 20 30 40; do 
-    if [ -d test$i ]; then 
-        date +%%H:%%M:%%S >> test$i/date.txt 
-    fi 
-done 
- 
-echo "Все действия выполнены!" 
+#!/bin/bash
+
+# ╨Я╨╡╤А╨╡╤Е╨╛╨┤╨╕╨╝ ╨▓ ╨┤╨╛╨╝╨░╤И╨╜╨╕╨╣ ╨║╨░╤В╨░╨╗╨╛╨│
+cd ~
+
+# ╨б╨╛╨╖╨┤╨░╤С╨╝ ╤Д╨░╨╣╨╗ ╤Б ╤Д╨░╨╝╨╕╨╗╨╕╨╡╨╣ ╨╕ ╨╕╨╜╨╕╤Ж╨╕╨░╨╗╨░╨╝╨╕
+touch PolyanskyS.txt
+
+# ╨Т╤Л╨▓╨╛╨┤╨╕╨╝ ╨┤╨╡╨╜╤М ╨╜╨╡╨┤╨╡╨╗╨╕
+date +%A >> PolyanskyS.txt
+
+# ╨Ш╨╜╤Д╨╛╤А╨╝╨░╤Ж╨╕╤П ╨╛ /bin/bash
+ls -la /bin/bash >> PolyanskyS.txt
+echo "/bin/bash - ╤Н╤В╨╛ ╨║╨╛╨╝╨░╨╜╨┤╨╜╤Л╨╣ ╨╕╨╜╤В╨╡╤А╨┐╤А╨╡╤В╨░╤В╨╛╤А" >> PolyanskyS.txt
+
+# ╨б╨║╨░╤З╨╕╨▓╨░╨╡╨╝ ╨║╨╜╨╕╨│╤Г
+curl -o alice.txt http://www.lib.ru/CARROLL/alice.txt
+
+# ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╤Б╨╗╨╛╨▓
+echo "╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╤Б╨╗╨╛╨▓: $(wc -w < alice.txt)" >> PolyanskyS.txt
+
+# ╨Я╨╡╤А╨▓╤Л╨╡ 19 ╤Б╤В╤А╨╛╨║
+head -19 alice.txt > first19.txt
+
+# ╨Я╨╛╤Б╨╗╨╡╨┤╨╜╨╕╨╡ 17 ╤Б╤В╤А╨╛╨║
+tail -17 alice.txt > last17.txt
+
+# ╨б╨╛╨╖╨┤╨░╤С╨╝ ╨║╨░╤В╨░╨╗╨╛╨│╨╕
+mkdir test{1..40}
+
+# ╨г╨┤╨░╨╗╤П╨╡╨╝ ╨║╨░╤В╨░╨╗╨╛╨│╨╕ ╨╜╨░ 3 ╨╕ 7
+rm -rf test*3 test*7
+
+# ╨б╨┐╨╕╤Б╨╛╨║ ╨║╨░╤В╨░╨╗╨╛╨│╨╛╨▓ ╨▓ test.txt
+ls -d test*/ > test.txt
+
+# ╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╤Б╤В╤А╨╛╨║ ╨▓ test.txt
+echo "╨Ъ╨╛╨╗╨╕╤З╨╡╤Б╤В╨▓╨╛ ╨║╨░╤В╨░╨╗╨╛╨│╨╛╨▓: $(wc -l < test.txt)" >> PolyanskyS.txt
+
+# ╨Т ╨║╨░╤В╨░╨╗╨╛╨│╨░╤Е, ╨║╤А╨░╤В╨╜╤Л╤Е 5, ╤Б╨╛╨╖╨┤╨░╤С╨╝ date.txt ╤Б ╨┤╨░╤В╨╛╨╣
+for i in 5 10 15 20 25 30 35 40; do
+    if [ -d test$i ]; then
+        date +%Y-%m-%d > test$i/date.txt
+    fi
+done
+
+# ╨Т ╨║╨░╤В╨░╨╗╨╛╨│╨░╤Е, ╨║╤А╨░╤В╨╜╤Л╤Е 10, ╨┤╨╛╨┐╨╕╤Б╤Л╨▓╨░╨╡╨╝ ╨▓╤А╨╡╨╝╤П
+for i in 10 20 30 40; do
+    if [ -d test$i ]; then
+        date +%H:%M:%S >> test$i/date.txt
+    fi
+done
+
+echo "╨Т╤Б╨╡ ╨┤╨╡╨╣╤Б╤В╨▓╨╕╤П ╨▓╤Л╨┐╨╛╨╗╨╜╨╡╨╜╤Л!"
