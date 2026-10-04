@@ -1,0 +1,43 @@
+Sunday
+-rwxr-xr-x 1 root root 756384 Sep 24  2024 /bin/bash
+/bin/bash: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib/ld-musl-x86_64.so.1, BuildID[sha1]=8962a0964bc8c128cfcc9cfa22d0a4e705c1a13b, stripped
+26895
+<html><head><title>Lewis Carroll. Alice's adventures in Wonderland</title></head><body><pre><div align=left><form action=/CARROLL/alice.txt><select name=format><OPTION VALUE=".fb2.zip">Fb2.zip<OPTION VALUE=".epub">Epub<OPTION VALUE="_Contents">Содержание<OPTION VALUE="_with-big-pictures.html">Fine HTML<OPTION VALUE="_with-big-pictures.html">Printed version<OPTION VALUE="_Ascii.txt">txt(Word,КПК)<OPTION VALUE="">Lib.ru html</select><input type=submit value=go></form></div><pre>
+<ul><a name=0></a><h2><a href=./>Lewis Carroll. Alice's adventures in Wonderland</a></h2></ul>
+
+---------------------------------------------------------------
+    <b>PROJECT GUTENBERG AND DUNCAN RESEARCH SHAREWARE</b>
+
+                             (c)1991
+
+Project Gutenberg has made arrangements with Duncan Research for
+the distribution of Duncan Research Electronic Library text.  No
+money is solicited by Project Gutenberg.  All donations go to:
+
+Barbara  Duncan
+Duncan Research
+P.O.  Box  2782
+Champaign,   IL
+61825 - 2782
+
+Please, if you send in a request for information, donate enough,
+
+  Lastly, she pictured to herself how this same little sister of
+hers would, in the after-time, be herself a grown woman; and how
+she would keep, through all her riper years, the simple and
+loving heart of her childhood:  and how she would gather about
+her other little children, and make THEIR eyes bright and eager
+with many a strange tale, perhaps even with the dream of
+Wonderland of long ago:  and how she would feel with all their
+simple sorrows, and find a pleasure in all their simple joys,
+remembering her own child-life, and the happy summer days.
+
+<ul><a name=14></a><h2>THE END</h2></ul>
+<pre><hr noshade><small>Популярность: <b>9</b>, Last-modified: Thu, 20 Feb 1997 07:22:31 GmT
+</small>
+
+
+</body></html>
+32
+
+Created 32 directories; lab actions completed.
